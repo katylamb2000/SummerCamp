@@ -1,0 +1,1641 @@
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+Migrating to CreateTeachers (20181001130610)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "teachers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "username" varchar, "password" varchar, "camp_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181001130610_create_teachers.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181001130610"]]
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (3.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+Migrating to CreateCamps (20181001130653)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "camps" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "username" varchar, "password" varchar, "location" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181001130653_create_camps.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181001130653"]]
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+Migrating to CreateStudents (20181001130713)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "students" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "username" varchar, "password" varchar, "camp_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181001130713_create_students.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181001130713"]]
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+Migrating to CreateActivities (20181001130844)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "activities" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "teacher_id" integer, "camp_id" integer, "skill_id" integer, "date" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181001130844_create_activities.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181001130844"]]
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+Migrating to CreateSkills (20181001130859)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "skills" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "category" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181001130859_create_skills.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181001130859"]]
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+Migrating to CreateStudentActivities (20181001130939)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "student_activities" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "student_id" integer, "activity_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181001130939_create_student_activities.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181001130939"]]
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+Migrating to CreateCampSkills (20181001130954)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "camp_skills" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "camp_id" integer, "skill_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181001130954_create_camp_skills.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181001130954"]]
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+Migrating to CreateTeacherSkills (20181001131011)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "teacher_skills" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "teacher_id" integer, "skill_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181001131011_create_teacher_skills.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181001131011"]]
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-10-01 13:10:54.156725"], ["updated_at", "2018-10-01 13:10:54.156725"]]
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCamp Create (1.3ms)[0m  [1m[32mINSERT INTO "camps" ("name", "location", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Test Camp"], ["location", "China"], ["created_at", "2018-10-01 13:13:54.549098"], ["updated_at", "2018-10-01 13:13:54.549098"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSkill Create (0.7ms)[0m  [1m[32mINSERT INTO "skills" ("name", "category", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "kayaking"], ["category", "water"], ["created_at", "2018-10-01 13:14:30.286600"], ["updated_at", "2018-10-01 13:14:30.286600"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCamp Load (0.2ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTeacher Create (0.6ms)[0m  [1m[32mINSERT INTO "teachers" ("name", "camp_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Billie Simmons"], ["camp_id", 1], ["created_at", "2018-10-01 13:14:54.789540"], ["updated_at", "2018-10-01 13:14:54.789540"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSkill Load (0.2ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTeacherSkill Create (0.6ms)[0m  [1m[32mINSERT INTO "teacher_skills" ("teacher_id", "skill_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["teacher_id", 1], ["skill_id", 1], ["created_at", "2018-10-01 13:16:04.459334"], ["updated_at", "2018-10-01 13:16:04.459334"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+Migrating to CreateTeacherSkills (20181001131011)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE "teacherskills"[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+Migrating to CreateTeacherSkills (20181001131011)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (2.3ms)[0m  [1m[35mDROP TABLE "teacher_skills"[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.6ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20181001131011"]]
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+Migrating to CreateCampSkills (20181001130954)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.9ms)[0m  [1m[35mDROP TABLE "camp_skills"[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20181001130954"]]
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+Migrating to CreateStudentActivities (20181001130939)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE "student_activities"[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20181001130939"]]
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+Migrating to CreateStudentActivities (20181001130939)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20181001130939_create_student_activities.rb:3
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "studentactivities" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "student_id" integer, "activity_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181001130939_create_student_activities.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181001130939"]]
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+Migrating to CreateCampSkills (20181001130954)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "campskills" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "camp_id" integer, "skill_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181001130954_create_camp_skills.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181001130954"]]
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+Migrating to CreateTeacherSkills (20181001131011)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "teacherskills" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "teacher_id" integer, "skill_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181001131011_create_teacher_skills.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181001131011"]]
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (11.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+Migrating to CreateTeacherSkills (20181001131011)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE "teacher_skills"[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+Migrating to CreateTeacherSkills (20181001131011)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (1.2ms)[0m  [1m[35mDROP TABLE "teacherskills"[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.5ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20181001131011"]]
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+Migrating to CreateCampSkills (20181001130954)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (1.4ms)[0m  [1m[35mDROP TABLE "campskills"[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20181001130954"]]
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+Migrating to CreateStudentActivities (20181001130939)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE "studentactivities"[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20181001130939"]]
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+Migrating to CreateStudentActivities (20181001130939)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20181001130939_create_student_activities.rb:3
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "student_activities" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "student_id" integer, "activity_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181001130939_create_student_activities.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181001130939"]]
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+Migrating to CreateCampSkills (20181001130954)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "camp_skills" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "camp_id" integer, "skill_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181001130954_create_camp_skills.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181001130954"]]
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+Migrating to CreateTeacherSkills (20181001131011)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "teacher_skills" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "teacher_id" integer, "skill_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181001131011_create_teacher_skills.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181001131011"]]
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[36mCamp Load (0.8ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCamp Destroy (6.5ms)[0m  [1m[31mDELETE FROM "camps" WHERE "camps"."id" = ?[0m  [["id", 1]]
+  [1m[36mCamp Load (0.6ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.9ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCamp Create (9.0ms)[0m  [1m[32mINSERT INTO "camps" ("name", "location", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "test camp"], ["location", "china"], ["created_at", "2018-10-01 13:30:27.806034"], ["updated_at", "2018-10-01 13:30:27.806034"]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSkill Create (1.1ms)[0m  [1m[32mINSERT INTO "skills" ("name", "category", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Kayaking"], ["category", "water"], ["created_at", "2018-10-01 13:31:17.513464"], ["updated_at", "2018-10-01 13:31:17.513464"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Load (0.6ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTeacherSkill Create (0.8ms)[0m  [1m[32mINSERT INTO "teacher_skills" ("teacher_id", "skill_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["teacher_id", 1], ["skill_id", 1], ["created_at", "2018-10-01 13:31:43.722048"], ["updated_at", "2018-10-01 13:31:43.722048"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSkill Load (1.4ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" INNER JOIN "teacher_skills" ON "skills"."id" = "teacher_skills"."skill_id" WHERE "teacher_skills"."teacher_id" = ? LIMIT ?[0m  [["teacher_id", 1], ["LIMIT", 11]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActivity Create (2.1ms)[0m  [1m[32mINSERT INTO "activities" ("teacher_id", "camp_id", "skill_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["teacher_id", 1], ["camp_id", 1], ["skill_id", 1], ["created_at", "2018-10-01 13:33:27.226585"], ["updated_at", "2018-10-01 13:33:27.226585"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTeacher Load (1.4ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."activity_id" = ? LIMIT ?[0m  [["activity_id", 1], ["LIMIT", 11]]
+  [1m[36mActivity Load (0.3ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCamp Load (2.1ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."activity_id" = ? LIMIT ?[0m  [["activity_id", 1], ["LIMIT", 11]]
+  [1m[36mSkill Load (3.0ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."activity_id" = ? LIMIT ?[0m  [["activity_id", 1], ["LIMIT", 11]]
+  [1m[36mTeacher Load (5.0ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."activity_id" = ? LIMIT ?[0m  [["activity_id", 1], ["LIMIT", 11]]
+  [1m[36mTeacher Load (4.1ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."activity_id" = ? LIMIT ?[0m  [["activity_id", 1], ["LIMIT", 11]]
+  [1m[36mActivity Load (1.3ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTeacher Load (0.5ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mActivity Load (0.5ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTeacher Load (0.5ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCamp Load (0.4ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCamp Load (0.4ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mSkill Load (0.8ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mTeacher Load (0.4ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mTeacherSkill Load (0.5ms)[0m  [1m[34mSELECT  "teacher_skills".* FROM "teacher_skills" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mSkill Load (0.2ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCamp Load (0.3ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCamp Load (0.1ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCampSkill Create (1.5ms)[0m  [1m[32mINSERT INTO "camp_skills" ("camp_id", "skill_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["camp_id", 2], ["skill_id", 1], ["created_at", "2018-10-01 13:46:10.047122"], ["updated_at", "2018-10-01 13:46:10.047122"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCampSkill Load (0.3ms)[0m  [1m[34mSELECT  "camp_skills".* FROM "camp_skills" WHERE "camp_skills"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSkill Load (0.3ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCamp Load (0.1ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStudent Create (0.9ms)[0m  [1m[32mINSERT INTO "students" ("name", "camp_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Katy"], ["camp_id", 2], ["created_at", "2018-10-01 13:47:03.973090"], ["updated_at", "2018-10-01 13:47:03.973090"]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActivity Load (0.3ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCamp Load (0.1ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mActivity Create (1.3ms)[0m  [1m[32mINSERT INTO "activities" ("teacher_id", "camp_id", "skill_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["teacher_id", 1], ["camp_id", 2], ["skill_id", 2], ["created_at", "2018-10-01 13:48:37.548917"], ["updated_at", "2018-10-01 13:48:37.548917"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudentActivity Create (0.9ms)[0m  [1m[32mINSERT INTO "student_activities" ("student_id", "activity_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["student_id", 1], ["activity_id", 1], ["created_at", "2018-10-01 13:50:28.073567"], ["updated_at", "2018-10-01 13:50:28.073567"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mStudentActivity Load (0.6ms)[0m  [1m[34mSELECT  "student_activities".* FROM "student_activities" WHERE "student_activities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mActivity Load (4.3ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSkill Load (0.5ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mActivity Load (2.5ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:1
+  [1m[36mTeacher Load (0.5ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:1
+  [1m[36mCamp Load (0.5ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:1
+  [1m[36mSkill Load (0.5ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:1
+  [1m[36mActivity Create (2.6ms)[0m  [1m[32mINSERT INTO "activities" ("teacher_id", "camp_id", "skill_id", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["teacher_id", 1], ["camp_id", 2], ["skill_id", 1], ["date", "2018-01-01 00:00:00"], ["created_at", "2018-10-01 14:14:45.400929"], ["updated_at", "2018-10-01 14:14:45.400929"]]
+  ↳ db/seeds.rb:1
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:1
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:2
+  [1m[36mCamp Load (0.1ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:2
+  [1m[36mSkill Load (0.0ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:2
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:3
+  [1m[36mCamp Load (0.1ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:3
+  [1m[36mSkill Load (0.0ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:3
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:4
+  [1m[36mCamp Load (0.0ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:4
+  [1m[36mSkill Load (0.0ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:4
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:5
+  [1m[36mCamp Load (0.0ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:5
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:6
+  [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:6
+  [1m[36mCamp Load (0.1ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:6
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:6
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:6
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:7
+  [1m[36mSkill Create (0.4ms)[0m  [1m[32mINSERT INTO "skills" ("name", "category", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "surfing"], ["category", "water"], ["created_at", "2018-10-01 14:14:45.472352"], ["updated_at", "2018-10-01 14:14:45.472352"]]
+  ↳ db/seeds.rb:7
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:7
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mSkill Create (0.4ms)[0m  [1m[32mINSERT INTO "skills" ("name", "category", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "rock climbing"], ["category", "vertical"], ["created_at", "2018-10-01 14:14:45.475668"], ["updated_at", "2018-10-01 14:14:45.475668"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mSkill Create (0.6ms)[0m  [1m[32mINSERT INTO "skills" ("name", "category", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "swimming"], ["category", "water"], ["created_at", "2018-10-01 14:14:45.479260"], ["updated_at", "2018-10-01 14:14:45.479260"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSkill Create (0.8ms)[0m  [1m[32mINSERT INTO "skills" ("name", "category", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "hiking"], ["category", "land"], ["created_at", "2018-10-01 14:14:45.483261"], ["updated_at", "2018-10-01 14:14:45.483261"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mSkill Create (0.6ms)[0m  [1m[32mINSERT INTO "skills" ("name", "category", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "skiing"], ["category", "snow"], ["created_at", "2018-10-01 14:14:45.487649"], ["updated_at", "2018-10-01 14:14:45.487649"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCamp Create (0.8ms)[0m  [1m[32mINSERT INTO "camps" ("name", "location", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Karstaway"], ["location", "Guilin"], ["created_at", "2018-10-01 14:14:45.492195"], ["updated_at", "2018-10-01 14:14:45.492195"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mCamp Create (0.5ms)[0m  [1m[32mINSERT INTO "camps" ("name", "location", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Jalenboo"], ["location", "Wanning"], ["created_at", "2018-10-01 14:14:45.497606"], ["updated_at", "2018-10-01 14:14:45.497606"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[36mCamp Create (1.0ms)[0m  [1m[32mINSERT INTO "camps" ("name", "location", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Le Ski"], ["location", "Beijing"], ["created_at", "2018-10-01 14:14:45.501090"], ["updated_at", "2018-10-01 14:14:45.501090"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mCamp Load (0.1ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mCampSkill Create (1.2ms)[0m  [1m[32mINSERT INTO "camp_skills" ("camp_id", "skill_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["camp_id", 2], ["skill_id", 1], ["created_at", "2018-10-01 14:14:45.541013"], ["updated_at", "2018-10-01 14:14:45.541013"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mCamp Load (0.1ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mCampSkill Create (0.4ms)[0m  [1m[32mINSERT INTO "camp_skills" ("camp_id", "skill_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["camp_id", 2], ["skill_id", 3], ["created_at", "2018-10-01 14:14:45.547749"], ["updated_at", "2018-10-01 14:14:45.547749"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mCamp Load (0.1ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mCamp Load (0.2ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:19
+  [1m[36mCamp Load (0.1ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[36mSkill Load (0.3ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[36mCampSkill Create (0.4ms)[0m  [1m[32mINSERT INTO "camp_skills" ("camp_id", "skill_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["camp_id", 2], ["skill_id", 4], ["created_at", "2018-10-01 14:14:45.561941"], ["updated_at", "2018-10-01 14:14:45.561941"]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:19
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mCamp Load (0.1ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mCamp Load (0.1ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mSkill Load (0.0ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mCampSkill Create (0.6ms)[0m  [1m[32mINSERT INTO "camp_skills" ("camp_id", "skill_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["camp_id", 3], ["skill_id", 5], ["created_at", "2018-10-01 14:14:45.569655"], ["updated_at", "2018-10-01 14:14:45.569655"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:22
+  [1m[36mCamp Load (0.2ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[36mTeacher Create (0.4ms)[0m  [1m[32mINSERT INTO "teachers" ("name", "camp_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Sally"], ["camp_id", 2], ["created_at", "2018-10-01 14:14:45.575366"], ["updated_at", "2018-10-01 14:14:45.575366"]]
+  ↳ db/seeds.rb:22
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[36mCamp Load (0.1ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:23
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[36mCamp Load (0.1ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:24
+  [1m[36mTeacher Create (0.4ms)[0m  [1m[32mINSERT INTO "teachers" ("name", "camp_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Victor"], ["camp_id", 3], ["created_at", "2018-10-01 14:14:45.582400"], ["updated_at", "2018-10-01 14:14:45.582400"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mCamp Load (0.1ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mTeacher Create (0.3ms)[0m  [1m[32mINSERT INTO "teachers" ("name", "camp_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Lou"], ["camp_id", 2], ["created_at", "2018-10-01 14:14:45.586337"], ["updated_at", "2018-10-01 14:14:45.586337"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mCamp Load (0.1ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:26
+  [1m[36mTeacher Create (0.4ms)[0m  [1m[32mINSERT INTO "teachers" ("name", "camp_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Sam"], ["camp_id", 2], ["created_at", "2018-10-01 14:14:45.590808"], ["updated_at", "2018-10-01 14:14:45.590808"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[36mCamp Load (0.1ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:27
+  [1m[36mTeacher Create (0.4ms)[0m  [1m[32mINSERT INTO "teachers" ("name", "camp_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Bob"], ["camp_id", 3], ["created_at", "2018-10-01 14:14:45.594823"], ["updated_at", "2018-10-01 14:14:45.594823"]]
+  ↳ db/seeds.rb:27
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:28
+  [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:28
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:28
+  [1m[36mTeacherSkill Create (0.7ms)[0m  [1m[32mINSERT INTO "teacher_skills" ("teacher_id", "skill_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["teacher_id", 1], ["skill_id", 1], ["created_at", "2018-10-01 14:14:45.611173"], ["updated_at", "2018-10-01 14:14:45.611173"]]
+  ↳ db/seeds.rb:28
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:28
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mTeacherSkill Create (0.4ms)[0m  [1m[32mINSERT INTO "teacher_skills" ("teacher_id", "skill_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["teacher_id", 2], ["skill_id", 1], ["created_at", "2018-10-01 14:14:45.616673"], ["updated_at", "2018-10-01 14:14:45.616673"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:30
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:30
+  [1m[36mTeacherSkill Create (0.4ms)[0m  [1m[32mINSERT INTO "teacher_skills" ("teacher_id", "skill_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["teacher_id", 1], ["skill_id", 3], ["created_at", "2018-10-01 14:14:45.628040"], ["updated_at", "2018-10-01 14:14:45.628040"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:31
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+  [1m[36mTeacherSkill Create (0.5ms)[0m  [1m[32mINSERT INTO "teacher_skills" ("teacher_id", "skill_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["teacher_id", 3], ["skill_id", 3], ["created_at", "2018-10-01 14:14:45.633757"], ["updated_at", "2018-10-01 14:14:45.633757"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:31
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:32
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:32
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:32
+  [1m[36mTeacherSkill Create (0.5ms)[0m  [1m[32mINSERT INTO "teacher_skills" ("teacher_id", "skill_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["teacher_id", 4], ["skill_id", 2], ["created_at", "2018-10-01 14:14:45.641510"], ["updated_at", "2018-10-01 14:14:45.641510"]]
+  ↳ db/seeds.rb:32
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:32
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:33
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:33
+  [1m[36mTeacherSkill Create (0.5ms)[0m  [1m[32mINSERT INTO "teacher_skills" ("teacher_id", "skill_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["teacher_id", 4], ["skill_id", 5], ["created_at", "2018-10-01 14:14:45.648826"], ["updated_at", "2018-10-01 14:14:45.648826"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:34
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:34
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:34
+  [1m[36mTeacherSkill Create (0.5ms)[0m  [1m[32mINSERT INTO "teacher_skills" ("teacher_id", "skill_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["teacher_id", 1], ["skill_id", 4], ["created_at", "2018-10-01 14:14:45.654559"], ["updated_at", "2018-10-01 14:14:45.654559"]]
+  ↳ db/seeds.rb:34
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:34
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:35
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:35
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:35
+  [1m[36mTeacherSkill Create (0.5ms)[0m  [1m[32mINSERT INTO "teacher_skills" ("teacher_id", "skill_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["teacher_id", 6], ["skill_id", 1], ["created_at", "2018-10-01 14:14:45.660517"], ["updated_at", "2018-10-01 14:14:45.660517"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:35
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:36
+  [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:36
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:36
+  [1m[36mTeacherSkill Create (0.4ms)[0m  [1m[32mINSERT INTO "teacher_skills" ("teacher_id", "skill_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["teacher_id", 5], ["skill_id", 1], ["created_at", "2018-10-01 14:14:45.665800"], ["updated_at", "2018-10-01 14:14:45.665800"]]
+  ↳ db/seeds.rb:36
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:36
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[36mCamp Load (0.1ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:37
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:38
+  [1m[36mCamp Load (0.1ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:38
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:38
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:39
+  [1m[36mCamp Load (0.1ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:39
+  [1m[36mStudent Create (0.8ms)[0m  [1m[32mINSERT INTO "students" ("name", "camp_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Ben"], ["camp_id", 2], ["created_at", "2018-10-01 14:14:45.698861"], ["updated_at", "2018-10-01 14:14:45.698861"]]
+  ↳ db/seeds.rb:39
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:39
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:40
+  [1m[36mCamp Load (0.1ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:40
+  [1m[36mStudent Create (0.4ms)[0m  [1m[32mINSERT INTO "students" ("name", "camp_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Shawn"], ["camp_id", 3], ["created_at", "2018-10-01 14:14:45.702854"], ["updated_at", "2018-10-01 14:14:45.702854"]]
+  ↳ db/seeds.rb:40
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:40
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:41
+  [1m[36mCamp Load (0.1ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:41
+  [1m[36mStudent Create (0.3ms)[0m  [1m[32mINSERT INTO "students" ("name", "camp_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Dan"], ["camp_id", 3], ["created_at", "2018-10-01 14:14:45.706452"], ["updated_at", "2018-10-01 14:14:45.706452"]]
+  ↳ db/seeds.rb:41
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:41
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:42
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:42
+  [1m[36mActivity Load (1.6ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCamp Load (0.2ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mSkill Load (0.3ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT  "students".* FROM "students" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:1
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:1
+  [1m[36mCamp Load (0.1ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:1
+  [1m[36mSkill Load (0.2ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:1
+  [1m[36mActivity Create (0.7ms)[0m  [1m[32mINSERT INTO "activities" ("teacher_id", "camp_id", "skill_id", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["teacher_id", 1], ["camp_id", 2], ["skill_id", 1], ["date", "2018-01-01 00:00:00"], ["created_at", "2018-10-01 14:17:31.117062"], ["updated_at", "2018-10-01 14:17:31.117062"]]
+  ↳ db/seeds.rb:1
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:1
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:2
+  [1m[36mCamp Load (0.0ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:2
+  [1m[36mSkill Load (0.3ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:2
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:3
+  [1m[36mCamp Load (0.1ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:3
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:3
+  [1m[36mActivity Create (0.8ms)[0m  [1m[32mINSERT INTO "activities" ("teacher_id", "camp_id", "skill_id", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["teacher_id", 3], ["camp_id", 3], ["skill_id", 5], ["date", "2018-10-01 00:00:00"], ["created_at", "2018-10-01 14:17:31.159083"], ["updated_at", "2018-10-01 14:17:31.159083"]]
+  ↳ db/seeds.rb:3
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:4
+  [1m[36mCamp Load (0.1ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:4
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:4
+  [1m[36mActivity Create (0.4ms)[0m  [1m[32mINSERT INTO "activities" ("teacher_id", "camp_id", "skill_id", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["teacher_id", 4], ["camp_id", 2], ["skill_id", 1], ["date", "2018-04-01 00:00:00"], ["created_at", "2018-10-01 14:17:31.167342"], ["updated_at", "2018-10-01 14:17:31.167342"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:5
+  [1m[36mCamp Load (0.1ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:5
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:5
+  [1m[36mActivity Create (0.6ms)[0m  [1m[32mINSERT INTO "activities" ("teacher_id", "camp_id", "skill_id", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["teacher_id", 5], ["camp_id", 2], ["skill_id", 1], ["date", "2018-01-04 00:00:00"], ["created_at", "2018-10-01 14:17:31.177275"], ["updated_at", "2018-10-01 14:17:31.177275"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:6
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:6
+  [1m[36mCamp Load (0.1ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:6
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:6
+  [1m[36mActivity Create (0.5ms)[0m  [1m[32mINSERT INTO "activities" ("teacher_id", "camp_id", "skill_id", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["teacher_id", 6], ["camp_id", 3], ["skill_id", 4], ["date", "2018-03-01 00:00:00"], ["created_at", "2018-10-01 14:17:31.185876"], ["updated_at", "2018-10-01 14:17:31.185876"]]
+  ↳ db/seeds.rb:6
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:6
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:7
+  [1m[36mSkill Create (0.7ms)[0m  [1m[32mINSERT INTO "skills" ("name", "category", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "surfing"], ["category", "water"], ["created_at", "2018-10-01 14:17:31.191177"], ["updated_at", "2018-10-01 14:17:31.191177"]]
+  ↳ db/seeds.rb:7
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:7
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mSkill Create (0.9ms)[0m  [1m[32mINSERT INTO "skills" ("name", "category", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "rock climbing"], ["category", "vertical"], ["created_at", "2018-10-01 14:17:31.197178"], ["updated_at", "2018-10-01 14:17:31.197178"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mSkill Create (0.6ms)[0m  [1m[32mINSERT INTO "skills" ("name", "category", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "swimming"], ["category", "water"], ["created_at", "2018-10-01 14:17:31.202063"], ["updated_at", "2018-10-01 14:17:31.202063"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSkill Create (0.6ms)[0m  [1m[32mINSERT INTO "skills" ("name", "category", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "hiking"], ["category", "land"], ["created_at", "2018-10-01 14:17:31.205932"], ["updated_at", "2018-10-01 14:17:31.205932"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mSkill Create (0.7ms)[0m  [1m[32mINSERT INTO "skills" ("name", "category", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "skiing"], ["category", "snow"], ["created_at", "2018-10-01 14:17:31.210979"], ["updated_at", "2018-10-01 14:17:31.210979"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCamp Create (0.4ms)[0m  [1m[32mINSERT INTO "camps" ("name", "location", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Karstaway"], ["location", "Guilin"], ["created_at", "2018-10-01 14:17:31.217236"], ["updated_at", "2018-10-01 14:17:31.217236"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mCamp Create (0.5ms)[0m  [1m[32mINSERT INTO "camps" ("name", "location", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Jalenboo"], ["location", "Wanning"], ["created_at", "2018-10-01 14:17:31.220818"], ["updated_at", "2018-10-01 14:17:31.220818"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[36mCamp Create (0.5ms)[0m  [1m[32mINSERT INTO "camps" ("name", "location", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Le Ski"], ["location", "Beijing"], ["created_at", "2018-10-01 14:17:31.226702"], ["updated_at", "2018-10-01 14:17:31.226702"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mCamp Load (0.1ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mCampSkill Create (0.5ms)[0m  [1m[32mINSERT INTO "camp_skills" ("camp_id", "skill_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["camp_id", 2], ["skill_id", 1], ["created_at", "2018-10-01 14:17:31.269646"], ["updated_at", "2018-10-01 14:17:31.269646"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mCamp Load (0.5ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mCampSkill Create (0.4ms)[0m  [1m[32mINSERT INTO "camp_skills" ("camp_id", "skill_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["camp_id", 2], ["skill_id", 3], ["created_at", "2018-10-01 14:17:31.276569"], ["updated_at", "2018-10-01 14:17:31.276569"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mCamp Load (0.3ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mCamp Load (0.1ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:19
+  [1m[36mCamp Load (0.2ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[36mSkill Load (0.2ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[36mCampSkill Create (0.5ms)[0m  [1m[32mINSERT INTO "camp_skills" ("camp_id", "skill_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["camp_id", 2], ["skill_id", 4], ["created_at", "2018-10-01 14:17:31.299641"], ["updated_at", "2018-10-01 14:17:31.299641"]]
+  ↳ db/seeds.rb:19
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:19
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mCamp Load (0.1ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mCamp Load (0.1ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mCampSkill Create (0.4ms)[0m  [1m[32mINSERT INTO "camp_skills" ("camp_id", "skill_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["camp_id", 3], ["skill_id", 5], ["created_at", "2018-10-01 14:17:31.314273"], ["updated_at", "2018-10-01 14:17:31.314273"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:22
+  [1m[36mCamp Load (0.4ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[36mTeacher Create (0.4ms)[0m  [1m[32mINSERT INTO "teachers" ("name", "camp_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Sally"], ["camp_id", 2], ["created_at", "2018-10-01 14:17:31.320362"], ["updated_at", "2018-10-01 14:17:31.320362"]]
+  ↳ db/seeds.rb:22
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[36mCamp Load (0.2ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:23
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[36mCamp Load (0.2ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:24
+  [1m[36mTeacher Create (0.5ms)[0m  [1m[32mINSERT INTO "teachers" ("name", "camp_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Victor"], ["camp_id", 3], ["created_at", "2018-10-01 14:17:31.342869"], ["updated_at", "2018-10-01 14:17:31.342869"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mCamp Load (0.2ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mTeacher Create (0.4ms)[0m  [1m[32mINSERT INTO "teachers" ("name", "camp_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Lou"], ["camp_id", 2], ["created_at", "2018-10-01 14:17:31.351456"], ["updated_at", "2018-10-01 14:17:31.351456"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mCamp Load (0.1ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:26
+  [1m[36mTeacher Create (0.5ms)[0m  [1m[32mINSERT INTO "teachers" ("name", "camp_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Sam"], ["camp_id", 2], ["created_at", "2018-10-01 14:17:31.355914"], ["updated_at", "2018-10-01 14:17:31.355914"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[36mCamp Load (0.2ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:27
+  [1m[36mTeacher Create (0.5ms)[0m  [1m[32mINSERT INTO "teachers" ("name", "camp_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Bob"], ["camp_id", 3], ["created_at", "2018-10-01 14:17:31.361515"], ["updated_at", "2018-10-01 14:17:31.361515"]]
+  ↳ db/seeds.rb:27
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:28
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:28
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:28
+  [1m[36mTeacherSkill Create (0.6ms)[0m  [1m[32mINSERT INTO "teacher_skills" ("teacher_id", "skill_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["teacher_id", 1], ["skill_id", 1], ["created_at", "2018-10-01 14:17:31.381238"], ["updated_at", "2018-10-01 14:17:31.381238"]]
+  ↳ db/seeds.rb:28
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:28
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mTeacherSkill Create (0.6ms)[0m  [1m[32mINSERT INTO "teacher_skills" ("teacher_id", "skill_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["teacher_id", 2], ["skill_id", 1], ["created_at", "2018-10-01 14:17:31.389274"], ["updated_at", "2018-10-01 14:17:31.389274"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:30
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:30
+  [1m[36mTeacherSkill Create (0.6ms)[0m  [1m[32mINSERT INTO "teacher_skills" ("teacher_id", "skill_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["teacher_id", 1], ["skill_id", 3], ["created_at", "2018-10-01 14:17:31.397394"], ["updated_at", "2018-10-01 14:17:31.397394"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:31
+  [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+  [1m[36mSkill Load (0.0ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+  [1m[36mTeacherSkill Create (0.4ms)[0m  [1m[32mINSERT INTO "teacher_skills" ("teacher_id", "skill_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["teacher_id", 3], ["skill_id", 3], ["created_at", "2018-10-01 14:17:31.403948"], ["updated_at", "2018-10-01 14:17:31.403948"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:31
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:32
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:32
+  [1m[36mSkill Load (0.2ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:32
+  [1m[36mTeacherSkill Create (0.8ms)[0m  [1m[32mINSERT INTO "teacher_skills" ("teacher_id", "skill_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["teacher_id", 4], ["skill_id", 2], ["created_at", "2018-10-01 14:17:31.410129"], ["updated_at", "2018-10-01 14:17:31.410129"]]
+  ↳ db/seeds.rb:32
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:32
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:33
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:33
+  [1m[36mTeacherSkill Create (0.7ms)[0m  [1m[32mINSERT INTO "teacher_skills" ("teacher_id", "skill_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["teacher_id", 4], ["skill_id", 5], ["created_at", "2018-10-01 14:17:31.419261"], ["updated_at", "2018-10-01 14:17:31.419261"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:34
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:34
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:34
+  [1m[36mTeacherSkill Create (0.5ms)[0m  [1m[32mINSERT INTO "teacher_skills" ("teacher_id", "skill_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["teacher_id", 1], ["skill_id", 4], ["created_at", "2018-10-01 14:17:31.428077"], ["updated_at", "2018-10-01 14:17:31.428077"]]
+  ↳ db/seeds.rb:34
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:34
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:35
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:35
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:35
+  [1m[36mTeacherSkill Create (0.6ms)[0m  [1m[32mINSERT INTO "teacher_skills" ("teacher_id", "skill_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["teacher_id", 6], ["skill_id", 1], ["created_at", "2018-10-01 14:17:31.446962"], ["updated_at", "2018-10-01 14:17:31.446962"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:35
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:36
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:36
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:36
+  [1m[36mTeacherSkill Create (1.4ms)[0m  [1m[32mINSERT INTO "teacher_skills" ("teacher_id", "skill_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["teacher_id", 5], ["skill_id", 1], ["created_at", "2018-10-01 14:17:31.453379"], ["updated_at", "2018-10-01 14:17:31.453379"]]
+  ↳ db/seeds.rb:36
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:36
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[36mCamp Load (0.2ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:37
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:38
+  [1m[36mCamp Load (0.1ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:38
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:38
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:39
+  [1m[36mCamp Load (0.2ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:39
+  [1m[36mStudent Create (0.5ms)[0m  [1m[32mINSERT INTO "students" ("name", "camp_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Ben"], ["camp_id", 2], ["created_at", "2018-10-01 14:17:31.518385"], ["updated_at", "2018-10-01 14:17:31.518385"]]
+  ↳ db/seeds.rb:39
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:39
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:40
+  [1m[36mCamp Load (0.1ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:40
+  [1m[36mStudent Create (0.6ms)[0m  [1m[32mINSERT INTO "students" ("name", "camp_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Shawn"], ["camp_id", 3], ["created_at", "2018-10-01 14:17:31.522842"], ["updated_at", "2018-10-01 14:17:31.522842"]]
+  ↳ db/seeds.rb:40
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:40
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:41
+  [1m[36mCamp Load (0.1ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:41
+  [1m[36mStudent Create (0.5ms)[0m  [1m[32mINSERT INTO "students" ("name", "camp_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Dan"], ["camp_id", 3], ["created_at", "2018-10-01 14:17:31.530941"], ["updated_at", "2018-10-01 14:17:31.530941"]]
+  ↳ db/seeds.rb:41
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:41
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:42
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[36mStudentActivity Create (0.8ms)[0m  [1m[32mINSERT INTO "student_activities" ("student_id", "activity_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["student_id", 5], ["activity_id", 1], ["created_at", "2018-10-01 14:17:31.553196"], ["updated_at", "2018-10-01 14:17:31.553196"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:42
+  [1m[36mActivity Load (0.6ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCamp Load (0.3ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (7.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+Migrating to CreateTeachers (20181001130610)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "teachers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "username" varchar, "password" varchar, "camp_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181001130610_create_teachers.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181001130610"]]
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+Migrating to CreateCamps (20181001130653)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "camps" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "username" varchar, "password" varchar, "location" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181001130653_create_camps.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181001130653"]]
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+Migrating to CreateStudents (20181001130713)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "students" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "username" varchar, "password" varchar, "camp_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181001130713_create_students.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181001130713"]]
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+Migrating to CreateActivities (20181001130844)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "activities" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "teacher_id" integer, "camp_id" integer, "skill_id" integer, "date" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181001130844_create_activities.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181001130844"]]
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+Migrating to CreateSkills (20181001130859)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "skills" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "category" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181001130859_create_skills.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181001130859"]]
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+Migrating to CreateStudentActivities (20181001130939)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "student_activities" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "student_id" integer, "activity_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181001130939_create_student_activities.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181001130939"]]
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+Migrating to CreateCampSkills (20181001130954)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "camp_skills" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "camp_id" integer, "skill_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181001130954_create_camp_skills.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181001130954"]]
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+Migrating to CreateTeacherSkills (20181001131011)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "teacher_skills" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "teacher_id" integer, "skill_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181001131011_create_teacher_skills.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181001131011"]]
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-10-01 14:18:56.633949"], ["updated_at", "2018-10-01 14:18:56.633949"]]
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:1
+  [1m[36mTeacher Load (0.4ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:1
+  [1m[36mCamp Load (0.5ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:1
+  [1m[36mSkill Load (0.5ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:1
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:1
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:2
+  [1m[36mCamp Load (0.0ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:2
+  [1m[36mSkill Load (0.0ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:2
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:3
+  [1m[36mCamp Load (0.0ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:3
+  [1m[36mSkill Load (0.0ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:4
+  [1m[36mCamp Load (0.0ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:4
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:4
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:5
+  [1m[36mCamp Load (0.0ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:5
+  [1m[36mSkill Load (0.0ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:6
+  [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:6
+  [1m[36mCamp Load (0.0ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:6
+  [1m[36mSkill Load (0.0ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:6
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:6
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:7
+  [1m[36mSkill Create (0.9ms)[0m  [1m[32mINSERT INTO "skills" ("name", "category", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "surfing"], ["category", "water"], ["created_at", "2018-10-01 14:19:01.975410"], ["updated_at", "2018-10-01 14:19:01.975410"]]
+  ↳ db/seeds.rb:7
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:7
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mSkill Create (0.4ms)[0m  [1m[32mINSERT INTO "skills" ("name", "category", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "rock climbing"], ["category", "vertical"], ["created_at", "2018-10-01 14:19:01.979207"], ["updated_at", "2018-10-01 14:19:01.979207"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mSkill Create (0.4ms)[0m  [1m[32mINSERT INTO "skills" ("name", "category", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "swimming"], ["category", "water"], ["created_at", "2018-10-01 14:19:01.981837"], ["updated_at", "2018-10-01 14:19:01.981837"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSkill Create (0.4ms)[0m  [1m[32mINSERT INTO "skills" ("name", "category", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "hiking"], ["category", "land"], ["created_at", "2018-10-01 14:19:01.984653"], ["updated_at", "2018-10-01 14:19:01.984653"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mSkill Create (0.6ms)[0m  [1m[32mINSERT INTO "skills" ("name", "category", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "skiing"], ["category", "snow"], ["created_at", "2018-10-01 14:19:01.987226"], ["updated_at", "2018-10-01 14:19:01.987226"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCamp Create (0.5ms)[0m  [1m[32mINSERT INTO "camps" ("name", "location", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Karstaway"], ["location", "Guilin"], ["created_at", "2018-10-01 14:19:02.010695"], ["updated_at", "2018-10-01 14:19:02.010695"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mCamp Create (0.6ms)[0m  [1m[32mINSERT INTO "camps" ("name", "location", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Jalenboo"], ["location", "Wanning"], ["created_at", "2018-10-01 14:19:02.014516"], ["updated_at", "2018-10-01 14:19:02.014516"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[36mCamp Create (1.3ms)[0m  [1m[32mINSERT INTO "camps" ("name", "location", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Le Ski"], ["location", "Beijing"], ["created_at", "2018-10-01 14:19:02.019005"], ["updated_at", "2018-10-01 14:19:02.019005"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (3.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mCamp Load (0.1ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mCampSkill Create (0.7ms)[0m  [1m[32mINSERT INTO "camp_skills" ("camp_id", "skill_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["camp_id", 2], ["skill_id", 1], ["created_at", "2018-10-01 14:19:02.054128"], ["updated_at", "2018-10-01 14:19:02.054128"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mCamp Load (0.1ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mCampSkill Create (0.3ms)[0m  [1m[32mINSERT INTO "camp_skills" ("camp_id", "skill_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["camp_id", 2], ["skill_id", 3], ["created_at", "2018-10-01 14:19:02.059619"], ["updated_at", "2018-10-01 14:19:02.059619"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mCamp Load (0.2ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[36mCampSkill Create (0.4ms)[0m  [1m[32mINSERT INTO "camp_skills" ("camp_id", "skill_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["camp_id", 1], ["skill_id", 2], ["created_at", "2018-10-01 14:19:02.064549"], ["updated_at", "2018-10-01 14:19:02.064549"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mCamp Load (0.2ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mCampSkill Create (0.4ms)[0m  [1m[32mINSERT INTO "camp_skills" ("camp_id", "skill_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["camp_id", 1], ["skill_id", 3], ["created_at", "2018-10-01 14:19:02.070950"], ["updated_at", "2018-10-01 14:19:02.070950"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:19
+  [1m[36mCamp Load (0.2ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[36mCampSkill Create (0.4ms)[0m  [1m[32mINSERT INTO "camp_skills" ("camp_id", "skill_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["camp_id", 2], ["skill_id", 4], ["created_at", "2018-10-01 14:19:02.077901"], ["updated_at", "2018-10-01 14:19:02.077901"]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:19
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mCamp Load (0.1ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mSkill Load (0.3ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mCampSkill Create (0.5ms)[0m  [1m[32mINSERT INTO "camp_skills" ("camp_id", "skill_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["camp_id", 1], ["skill_id", 4], ["created_at", "2018-10-01 14:19:02.083313"], ["updated_at", "2018-10-01 14:19:02.083313"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mCamp Load (0.2ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mCampSkill Create (0.7ms)[0m  [1m[32mINSERT INTO "camp_skills" ("camp_id", "skill_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["camp_id", 3], ["skill_id", 5], ["created_at", "2018-10-01 14:19:02.091459"], ["updated_at", "2018-10-01 14:19:02.091459"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (6.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:22
+  [1m[36mCamp Load (0.2ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[36mTeacher Create (0.6ms)[0m  [1m[32mINSERT INTO "teachers" ("name", "camp_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Sally"], ["camp_id", 2], ["created_at", "2018-10-01 14:19:02.121139"], ["updated_at", "2018-10-01 14:19:02.121139"]]
+  ↳ db/seeds.rb:22
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[36mCamp Load (0.1ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:23
+  [1m[36mTeacher Create (0.4ms)[0m  [1m[32mINSERT INTO "teachers" ("name", "camp_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Steve"], ["camp_id", 1], ["created_at", "2018-10-01 14:19:02.129391"], ["updated_at", "2018-10-01 14:19:02.129391"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[36mCamp Load (0.2ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:24
+  [1m[36mTeacher Create (0.6ms)[0m  [1m[32mINSERT INTO "teachers" ("name", "camp_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Victor"], ["camp_id", 3], ["created_at", "2018-10-01 14:19:02.134886"], ["updated_at", "2018-10-01 14:19:02.134886"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mCamp Load (0.1ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mTeacher Create (0.5ms)[0m  [1m[32mINSERT INTO "teachers" ("name", "camp_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Lou"], ["camp_id", 2], ["created_at", "2018-10-01 14:19:02.140806"], ["updated_at", "2018-10-01 14:19:02.140806"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mCamp Load (0.1ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:26
+  [1m[36mTeacher Create (0.3ms)[0m  [1m[32mINSERT INTO "teachers" ("name", "camp_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Sam"], ["camp_id", 2], ["created_at", "2018-10-01 14:19:02.145065"], ["updated_at", "2018-10-01 14:19:02.145065"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[36mCamp Load (0.1ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:27
+  [1m[36mTeacher Create (0.6ms)[0m  [1m[32mINSERT INTO "teachers" ("name", "camp_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Bob"], ["camp_id", 3], ["created_at", "2018-10-01 14:19:02.149445"], ["updated_at", "2018-10-01 14:19:02.149445"]]
+  ↳ db/seeds.rb:27
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:28
+  [1m[36mTeacher Load (0.4ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:28
+  [1m[36mSkill Load (0.2ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:28
+  [1m[36mTeacherSkill Create (0.5ms)[0m  [1m[32mINSERT INTO "teacher_skills" ("teacher_id", "skill_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["teacher_id", 1], ["skill_id", 1], ["created_at", "2018-10-01 14:19:02.178809"], ["updated_at", "2018-10-01 14:19:02.178809"]]
+  ↳ db/seeds.rb:28
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:28
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mSkill Load (0.0ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mTeacherSkill Create (0.5ms)[0m  [1m[32mINSERT INTO "teacher_skills" ("teacher_id", "skill_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["teacher_id", 2], ["skill_id", 1], ["created_at", "2018-10-01 14:19:02.184203"], ["updated_at", "2018-10-01 14:19:02.184203"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:30
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:30
+  [1m[36mTeacherSkill Create (0.4ms)[0m  [1m[32mINSERT INTO "teacher_skills" ("teacher_id", "skill_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["teacher_id", 1], ["skill_id", 3], ["created_at", "2018-10-01 14:19:02.196893"], ["updated_at", "2018-10-01 14:19:02.196893"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:31
+  [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+  [1m[36mTeacherSkill Create (0.4ms)[0m  [1m[32mINSERT INTO "teacher_skills" ("teacher_id", "skill_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["teacher_id", 3], ["skill_id", 3], ["created_at", "2018-10-01 14:19:02.202215"], ["updated_at", "2018-10-01 14:19:02.202215"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:31
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:32
+  [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:32
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:32
+  [1m[36mTeacherSkill Create (0.4ms)[0m  [1m[32mINSERT INTO "teacher_skills" ("teacher_id", "skill_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["teacher_id", 4], ["skill_id", 2], ["created_at", "2018-10-01 14:19:02.206816"], ["updated_at", "2018-10-01 14:19:02.206816"]]
+  ↳ db/seeds.rb:32
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:32
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:33
+  [1m[36mSkill Load (0.0ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:33
+  [1m[36mTeacherSkill Create (0.4ms)[0m  [1m[32mINSERT INTO "teacher_skills" ("teacher_id", "skill_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["teacher_id", 4], ["skill_id", 5], ["created_at", "2018-10-01 14:19:02.211435"], ["updated_at", "2018-10-01 14:19:02.211435"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:34
+  [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:34
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:34
+  [1m[36mTeacherSkill Create (0.7ms)[0m  [1m[32mINSERT INTO "teacher_skills" ("teacher_id", "skill_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["teacher_id", 1], ["skill_id", 4], ["created_at", "2018-10-01 14:19:02.216368"], ["updated_at", "2018-10-01 14:19:02.216368"]]
+  ↳ db/seeds.rb:34
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:34
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:35
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:35
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:35
+  [1m[36mTeacherSkill Create (0.5ms)[0m  [1m[32mINSERT INTO "teacher_skills" ("teacher_id", "skill_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["teacher_id", 6], ["skill_id", 1], ["created_at", "2018-10-01 14:19:02.224087"], ["updated_at", "2018-10-01 14:19:02.224087"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:35
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:36
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:36
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:36
+  [1m[36mTeacherSkill Create (0.7ms)[0m  [1m[32mINSERT INTO "teacher_skills" ("teacher_id", "skill_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["teacher_id", 5], ["skill_id", 1], ["created_at", "2018-10-01 14:19:02.230719"], ["updated_at", "2018-10-01 14:19:02.230719"]]
+  ↳ db/seeds.rb:36
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:36
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[36mCamp Load (0.1ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:37
+  [1m[36mStudent Create (0.7ms)[0m  [1m[32mINSERT INTO "students" ("name", "camp_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Lucy"], ["camp_id", 1], ["created_at", "2018-10-01 14:19:02.267196"], ["updated_at", "2018-10-01 14:19:02.267196"]]
+  ↳ db/seeds.rb:37
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:38
+  [1m[36mCamp Load (0.4ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:38
+  [1m[36mStudent Create (0.7ms)[0m  [1m[32mINSERT INTO "students" ("name", "camp_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Jon"], ["camp_id", 1], ["created_at", "2018-10-01 14:19:02.273060"], ["updated_at", "2018-10-01 14:19:02.273060"]]
+  ↳ db/seeds.rb:38
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:38
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:39
+  [1m[36mCamp Load (0.2ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:39
+  [1m[36mStudent Create (0.6ms)[0m  [1m[32mINSERT INTO "students" ("name", "camp_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Ben"], ["camp_id", 2], ["created_at", "2018-10-01 14:19:02.278631"], ["updated_at", "2018-10-01 14:19:02.278631"]]
+  ↳ db/seeds.rb:39
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:39
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:40
+  [1m[36mCamp Load (0.1ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:40
+  [1m[36mStudent Create (0.4ms)[0m  [1m[32mINSERT INTO "students" ("name", "camp_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Shawn"], ["camp_id", 3], ["created_at", "2018-10-01 14:19:02.284943"], ["updated_at", "2018-10-01 14:19:02.284943"]]
+  ↳ db/seeds.rb:40
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:40
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:41
+  [1m[36mCamp Load (0.3ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:41
+  [1m[36mStudent Create (0.6ms)[0m  [1m[32mINSERT INTO "students" ("name", "camp_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Dan"], ["camp_id", 3], ["created_at", "2018-10-01 14:19:02.290354"], ["updated_at", "2018-10-01 14:19:02.290354"]]
+  ↳ db/seeds.rb:41
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:41
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:42
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[36mActivity Load (0.5ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:42
+  [1m[36mActivity Load (1.6ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCamp Load (0.5ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCamp Load (0.1ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mActivity Create (0.9ms)[0m  [1m[32mINSERT INTO "activities" ("teacher_id", "camp_id", "skill_id", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["teacher_id", 1], ["camp_id", 2], ["skill_id", 1], ["date", "2018-01-01 00:00:00"], ["created_at", "2018-10-01 14:19:33.318298"], ["updated_at", "2018-10-01 14:19:33.318298"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCamp Load (0.1ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mActivity Create (0.5ms)[0m  [1m[32mINSERT INTO "activities" ("teacher_id", "camp_id", "skill_id", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["teacher_id", 2], ["camp_id", 1], ["skill_id", 2], ["date", "2018-07-06 00:00:00"], ["created_at", "2018-10-01 14:19:36.390475"], ["updated_at", "2018-10-01 14:19:36.390475"]]
+  [1m[35m (5.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCamp Load (0.1ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mActivity Create (0.6ms)[0m  [1m[32mINSERT INTO "activities" ("teacher_id", "camp_id", "skill_id", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["teacher_id", 3], ["camp_id", 3], ["skill_id", 5], ["date", "2018-10-01 00:00:00"], ["created_at", "2018-10-01 14:19:39.254345"], ["updated_at", "2018-10-01 14:19:39.254345"]]
+  [1m[35m (4.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCamp Load (0.1ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mActivity Create (0.7ms)[0m  [1m[32mINSERT INTO "activities" ("teacher_id", "camp_id", "skill_id", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["teacher_id", 4], ["camp_id", 2], ["skill_id", 1], ["date", "2018-04-01 00:00:00"], ["created_at", "2018-10-01 14:19:41.695221"], ["updated_at", "2018-10-01 14:19:41.695221"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCamp Load (0.1ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSkill Load (0.1ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mActivity Create (4.7ms)[0m  [1m[32mINSERT INTO "activities" ("teacher_id", "camp_id", "skill_id", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["teacher_id", 5], ["camp_id", 2], ["skill_id", 1], ["date", "2018-01-04 00:00:00"], ["created_at", "2018-10-01 14:19:43.980726"], ["updated_at", "2018-10-01 14:19:43.980726"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCamp Load (0.0ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSkill Load (0.0ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" WHERE "skills"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mActivity Create (0.4ms)[0m  [1m[32mINSERT INTO "activities" ("teacher_id", "camp_id", "skill_id", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["teacher_id", 6], ["camp_id", 3], ["skill_id", 4], ["date", "2018-03-01 00:00:00"], ["created_at", "2018-10-01 14:19:46.391859"], ["updated_at", "2018-10-01 14:19:46.391859"]]
+  [1m[35m (5.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActivity Load (0.3ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mActivity Load (3.4ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mSkill Load (0.8ms)[0m  [1m[34mSELECT  "skills".* FROM "skills" LIMIT ?[0m  [["LIMIT", 11]]

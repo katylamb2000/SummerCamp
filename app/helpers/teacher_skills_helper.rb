@@ -1,0 +1,2 @@
+module TeacherSkillsHelper
+end

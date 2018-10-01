@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  teacher_id: 1
+  camp_id: 1
+  skill_id: 1
+  date: 2018-10-01 14:08:44
+
+two:
+  teacher_id: 1
+  camp_id: 1
+  skill_id: 1
+  date: 2018-10-01 14:08:44
