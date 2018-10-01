@@ -1,5 +1,6 @@
 class Camp < ApplicationRecord
-  has_many :teachers
+  has_many :camp_teachers
+  has_many :teachers, through: :camp_teachers
   has_many :activities
   has_many :students
   has_many :camp_skills

@@ -1,8 +1,8 @@
 class TeachersController < ApplicationController
   before_action :set_teacher, only: [:show, :edit, :update, :destroy]
   before_action :set_camps, only: [:new, :edit]
-  before_action :set_activities, only: [:new, :edit]
 
+  before_action :set_skills, only: [:new, :edit]
   def index
     @teachers = Teacher.all
   end
@@ -12,6 +12,7 @@ class TeachersController < ApplicationController
 
   def new
     @teacher = Teacher.new
+
   end
 
   def create
@@ -21,7 +22,7 @@ class TeachersController < ApplicationController
       redirect_to @teacher
     else
       flash[:errors] = @teacher.errors.full_messages
-      redirect_to new_activity_path
+      redirect_to new_teacher_path
     end
   end
 
@@ -50,7 +51,7 @@ class TeachersController < ApplicationController
   end
 
   def teacher_params
-    params.require(:teacher).permit(:name, :username, :password, :camp_id)
+    params.require(:teacher).permit(:name, :username, :password, :skill_id)
   end
 
   def set_camps

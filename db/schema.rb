@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_01_131011) do
+ActiveRecord::Schema.define(version: 2018_10_01_160654) do
 
   create_table "activities", force: :cascade do |t|
     t.integer "teacher_id"
@@ -24,6 +24,13 @@ ActiveRecord::Schema.define(version: 2018_10_01_131011) do
   create_table "camp_skills", force: :cascade do |t|
     t.integer "camp_id"
     t.integer "skill_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "camp_teachers", force: :cascade do |t|
+    t.integer "teacher_id"
+    t.integer "camp_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -71,7 +78,6 @@ ActiveRecord::Schema.define(version: 2018_10_01_131011) do
     t.string "name"
     t.string "username"
     t.string "password"
-    t.integer "camp_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
