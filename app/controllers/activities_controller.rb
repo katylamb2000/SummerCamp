@@ -16,13 +16,13 @@ class ActivitiesController < ApplicationController
   end
 
   def create
-       @song = Song.new(song_params)
-    if @song.valid?
-       @song.save
-      redirect_to @song
+       @activity = Activity.new(activity_params)
+    if @activity.valid?
+       @activity.save
+      redirect_to @activity
     else
-      flash[:errors] = @song.errors.full_messages
-      redirect_to new_song_path
+      flash[:errors] = @activity.errors.full_messages
+      redirect_to new_activity_path
     end
   end
 
@@ -30,35 +30,39 @@ class ActivitiesController < ApplicationController
   end
 
   def update
-    @song.update(song_params)
-    if @song.valid?
-      redirect_to song_path(@song)
+    @activity.update(activity_params)
+    if @activity.valid?
+      redirect_to activity_path(@activity)
     else
-      flash[:errors] = @song.errors.full_messages
-      redirect_to edit_song_path
+      flash[:errors] = @activity.errors.full_messages
+      redirect_to edit_activity_path
     end
   end
 
   def destroy
-    @song.destroy
+    @activity.destroy
     redirect_to songs_url
   end
 
   private
 
   def set_post
-    @song = Song.find(params[:id])
+    @activity = Activity.find(params[:id])
   end
 
-  def set_regions
-    @regions = Region.all.sort_by { |r| r.name }
+  def set_teachers
+    @teachers = Teacher.all.sort_by { |t| t.name }
   end
 
-  def set_cheeses
-    @cheeses = Cheese.all.sort_by { |r| r.name }
+  def set_camps
+    @camps = Camp.all.sort_by { |c| c.name }
   end
 
-  def song_params
-    params.require(:song).permit(:title, :release_year, :released, :genre, :artist_name)
+  def set_skills
+    @skills = Skill.all.sort_by { |s| s.name }
+  end
+
+  def activity_params
+    params.require(:activity).permit(:teacher_id, :camp_id, :skill_id, :date)
   end
 end
