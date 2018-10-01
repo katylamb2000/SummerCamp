@@ -1,0 +1,10 @@
+<h1> All Camps</h1>
+
+<%= link_to "Register a New Camp", new_camp_path %>
+
+<ul>
+  <% @camps.each do |camp| %>
+  <li> <%= link_to camp.name, camp %>
+  </li>
+  <% end %>
+</ul>

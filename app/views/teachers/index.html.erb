@@ -1,0 +1,10 @@
+<h1> All Teachers</h1>
+
+<%= link_to "Register as a New Teacher", new_teacher_path %>
+
+<ul>
+  <% @teachers.each do |teacher| %>
+  <li> <%= link_to teacher.name, teacher %>
+  </li>
+  <% end %>
+</ul>

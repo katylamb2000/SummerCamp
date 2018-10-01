@@ -1,0 +1,5 @@
+<h1> <%= @camp.name %>  </h1>
+
+<%  @camp.students.each do |student| %>
+<p> These kids have signed up for this camp <%= link_to student.name, student %>  </p>
+<% end %>

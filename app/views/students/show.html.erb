@@ -1,0 +1,8 @@
+<h1> <%= @student.name %>  </h1>
+
+<% if @student.camp_id %>
+<p> You have signed up for the <%= link_to @student.camp.name, camps_path(@student.camp) %> camp </p>
+<% else %>
+
+<p> You have not yet signed up for a camp.</p> <%= link_to "View Camps", camps_path %>
+<% end %>

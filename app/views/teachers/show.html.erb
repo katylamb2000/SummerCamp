@@ -1,0 +1,8 @@
+<h1> <%= @teacher.name %>  </h1>
+
+<% if @teacher.camp_id %>
+<p> You have been hired to work on the <%= link_to @teacher.camp.name, camps_path(@teacher.camp) %> camp </p>
+<% else %>
+
+<p> You have not yet been hired for a camp.</p> <%= link_to "View Camps", camps_path %>
+<% end %>
