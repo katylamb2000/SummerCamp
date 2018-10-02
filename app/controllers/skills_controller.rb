@@ -1,6 +1,7 @@
 class SkillsController < ApplicationController
   before_action :set_skill, only: [:show, :edit, :update, :destroy]
-  before_action :set_teachers, only: [:new, :edit]
+  before_action :set_teachers, only: [:new, :edit, :show]
+  before_action :set_skill_categories, only: [:new, :create]
 
   def index
     @skills = Skill.all
@@ -11,6 +12,7 @@ class SkillsController < ApplicationController
 
   def new
     @skill = Skill.new
+
   end
 
   def create
@@ -55,4 +57,9 @@ class SkillsController < ApplicationController
   def set_teachers
     @teachers = Teacher.all.sort_by { |t| t.name }
   end
+
+  def set_skill_categories
+    @skill_categories = Skill.all
+  end
+
 end

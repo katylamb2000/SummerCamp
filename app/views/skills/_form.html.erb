@@ -1,0 +1,15 @@
+<%= form_for(@skill) do |f| %>
+  <div class="field">
+    <%= f.label :name, "Name:" %>
+    <%= f.text_field :name %>
+  </div><br>
+  <div class="field">
+  <%= f.label "category" %>
+  <%= f.collection_select :skill_ids, @skill_categories, :id, :category %>
+  </div><br>
+
+  </div><br>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

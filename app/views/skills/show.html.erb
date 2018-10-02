@@ -1,0 +1,19 @@
+<h1> <%= @skill.name %>  </h1>
+
+<h2> Skill Category:  <%= @skill.category %> </h2>
+
+
+<p> These teachers teach these skills
+<%  @skill.teachers.each do |teacher| %>
+
+<li>
+  <%= link_to teacher.name, teacher %> </li>
+<% end %>
+</p>
+
+<p> These camps offer these activities </p>
+
+<%  @skill.camps.each do |camp| %>
+
+<li>  <%= link_to camp.name, camp %> </li>
+<% end %>
