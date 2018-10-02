@@ -1,0 +1,21 @@
+<%= form_for(@camp) do |f| %>
+  <div class="field">
+    <%= f.label :username, "Username:" %><br>
+    <%= f.text_field :username %>
+  </div>
+  <div class="field">
+    <%= f.label :password, "Password:" %><br>
+    <%= f.password_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label :location, "Location:" %><br>
+    <%= f.text_field :location %>
+  </div>
+  <div class="field">
+    <%= f.label :name, "Name of Camp:" %><br>
+    <%= f.text_field :name %>
+  </div><br>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
