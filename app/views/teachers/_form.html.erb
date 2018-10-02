@@ -1,0 +1,20 @@
+<%= form_for (@teacher) do |f| %>
+<div class="field">
+<%= f.label :username, "Username:" %>
+<%= f.text_field :username %>
+</div><br>
+<div class="field">
+<%= f.label :password, "Password:" %>
+<%= f.password_field :password %>
+</div><br>
+<div class="field">
+<%= f.label :name, "Name:" %>
+<%= f.text_field :name %>
+</div><br>
+<div class="field">
+<%= f.label :skill_ids, "Skills:" %>
+<%= f.collection_check_boxes :skill_ids, @skills, :id, :name %>
+</div><br>
+<div class="actions">
+<%= f.submit %>
+<% end %>
