@@ -21,7 +21,7 @@ class StudentsController < ApplicationController
       redirect_to @student
     else
       flash[:errors] = @student.errors.full_messages
-      redirect_to new_activity_path
+      redirect_to new_student_path
     end
   end
 
@@ -50,7 +50,7 @@ class StudentsController < ApplicationController
   end
 
   def student_params
-    params.require(:student).permit(:name, :username, :password, :camp_id)
+    params.require(:student).permit(:name)
   end
 
   def set_camps

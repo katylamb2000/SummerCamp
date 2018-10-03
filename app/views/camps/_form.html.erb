@@ -1,19 +1,11 @@
 <%= form_for(@camp) do |f| %>
   <div class="field">
-    <%= f.label :username, "Username:" %>
-    <%= f.text_field :username %>
-  </div><br>
-  <div class="field">
-    <%= f.label :password, "Password:" %>
-    <%= f.password_field :password %>
+    <%= f.label :name, "Name of Camp:" %>
+    <%= f.text_field :name %>
   </div><br>
   <div class="field">
     <%= f.label :location, "Location:" %>
     <%= f.text_field :location %>
-  </div><br>
-  <div class="field">
-    <%= f.label :name, "Name of Camp:" %>
-    <%= f.text_field :name %>
   </div><br>
   <div class="actions">
     <%= f.submit %>
