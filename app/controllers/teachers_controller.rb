@@ -30,7 +30,7 @@ class TeachersController < ApplicationController
   end
 
   def search
-    if params[:search].blank?
+    if params[:name].blank? && params[:skill].blank?
       @teachers = Teacher.all
     else
       @teachers = Teacher.search(params)

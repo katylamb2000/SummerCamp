@@ -6,11 +6,14 @@ class Teacher < ApplicationRecord
   has_one :camp_teacher
 
   def self.search(params)
-   @teacher = Teacher.select{ |teacher| teacher.name == params[:search]}
-
-    #
-    #
-
-
-end
+    if !params[:name].blank? && !params[:skill].blank?
+      @teacher = Teacher.select{ |teacher| teacher.name == params[:name] && teacher.skills.include?(Skill.find(params[:skill])) }
+    elsif !params[:name].blank?
+      @teacher = Teacher.select{ |teacher| teacher.name == params[:name] }
+    elsif !params[:skill].blank?
+      @teacher = Teacher.select{ |teacher| teacher.skills.include?(Skill.find(params[:skill]))}
+    else
+      @teacher = []
+    end
+ end
 end

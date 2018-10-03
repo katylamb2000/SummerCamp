@@ -8,8 +8,10 @@
 
 <% end %>
 
+
+
 <ul>
-  <% if @teachers %> 
+  <% if @teachers %>
   <% @teachers.each do |teacher| %>
   <li> <%= link_to teacher.name, teacher %>
   </li>
