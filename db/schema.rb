@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_03_144431) do
+
+ActiveRecord::Schema.define(version: 2018_10_03_142534) do
 
   create_table "activities", force: :cascade do |t|
     t.integer "teacher_id"
@@ -40,13 +41,12 @@ ActiveRecord::Schema.define(version: 2018_10_03_144431) do
     t.string "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "searches", force: :cascade do |t|
-    t.string "keywords"
-    t.integer "skill_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string "username"
+    t.string "password_digest"
+    t.string "cost"
+    t.string "dates"
+    t.string "description"
+    t.string "photo_url"
   end
 
   create_table "skills", force: :cascade do |t|
@@ -86,14 +86,6 @@ ActiveRecord::Schema.define(version: 2018_10_03_144431) do
     t.string "nationality"
     t.string "bio"
     t.string "photo"
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string "username"
-    t.string "password_digest"
-    t.string "account_type"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
 end
