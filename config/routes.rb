@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :users, only: [:index, :show, :create, :edit, :update]
   resources :teacher_skills
   resources :camp_skills
   resources :student_activities
@@ -15,7 +14,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   # create the user
-  get "/signup", to: 'users#new', as: 'signup'
+  get "/signup", to: 'camps#new', as: 'signup'
 
   # session functionality
   get "/login",     to: 'sessions#new',     as: 'login'
