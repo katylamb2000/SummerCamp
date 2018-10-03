@@ -1,8 +1,11 @@
 <h1> <%= @teacher.name %>  </h1>
 
+<p> <%= @teacher.name %> is <%= @teacher.nationality %>
+
 <% if @teacher.camp_teacher %>
-<p> You have been hired to work on the <%= link_to @teacher.camp.name, camps_path(@teacher.camp) %> camp </p>
+<p> <%= @teacher.name %> has been hired to work on the <%= link_to @teacher.camp.name, camps_path(@teacher.camp) %> camp </p>
 <% else %>
 
-<p> You have not yet been hired for a camp.</p> <%= link_to "View Camps", camps_path %>
+<p> <%= @teacher.name %> has not yet been hired for a camp.</p>
+<%= link_to "Hire #{@teacher.name}", edit_teacher_path %>
 <% end %>

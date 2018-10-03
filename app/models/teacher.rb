@@ -7,7 +7,7 @@ class Teacher < ApplicationRecord
 
   def self.search(params)
     if !params[:name].blank? && !params[:skill].blank?
-     @teacher = Teacher.select{ |teacher| teacher.name == params[:name] && teacher.skills.include?(Skill.find(params[:skill])) }
+     @teacher = Teacher.select{ |teacher| teacher.nationality == params[:nationality] && teacher.skills.include?(Skill.find(params[:skill])) }
   #	    elsif !params[:name].blank?
   #	      @teacher = Teacher.select{ |teacher| teacher.name == params[:name] }
    elsif !params[:skill].blank?
