@@ -6,7 +6,6 @@
 <%= text_field_tag :name, nil, placeholder: "Search name" %>
 <%= select_tag "skill", options_from_collection_for_select(Skill.all, "id", "name"), placeholder: "skill name Search" %>
 
-
 <%= submit_tag "search" %>
 
 <% end %>

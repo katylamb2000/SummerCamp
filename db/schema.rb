@@ -12,6 +12,8 @@
 
 ActiveRecord::Schema.define(version: 2018_10_03_123022) do
 
+
+
   create_table "activities", force: :cascade do |t|
     t.integer "teacher_id"
     t.integer "camp_id"
@@ -37,8 +39,6 @@ ActiveRecord::Schema.define(version: 2018_10_03_123022) do
 
   create_table "camps", force: :cascade do |t|
     t.string "name"
-    t.string "username"
-    t.string "password"
     t.string "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -67,8 +67,6 @@ ActiveRecord::Schema.define(version: 2018_10_03_123022) do
 
   create_table "students", force: :cascade do |t|
     t.string "name"
-    t.string "username"
-    t.string "password"
     t.integer "camp_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -83,8 +81,14 @@ ActiveRecord::Schema.define(version: 2018_10_03_123022) do
 
   create_table "teachers", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
     t.string "username"
-    t.string "password"
+    t.string "password_digest"
+    t.string "account_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
