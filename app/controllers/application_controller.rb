@@ -2,10 +2,10 @@ class ApplicationController < ActionController::Base
   helper_method :current_user, :logged_in?
 
   def current_user
-    if session[:user_id]
-      User.find(session[:user_id])
+    if session[:camp_id]
+      Camp.find(session[:camp_id])
     else
-      User.new
+      Camp.new
     end
   end
 
@@ -20,10 +20,10 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def authorized_for(user_id)
+  def authorized_for(camp_id)
     if current_user.admin == true
       true
-    elsif current_user.id != user_id.to_i
+    elsif current_user.id != camp_id.to_i
       flash[:authorized] = "You can't view a page that doesn't belong to you!"
       redirect_to current_user
     end

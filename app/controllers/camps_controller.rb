@@ -19,7 +19,7 @@ class CampsController < ApplicationController
       redirect_to @camp
     else
       flash[:errors] = @camp.errors.full_messages
-      redirect_to new_activity_path
+      redirect_to signup_path
     end
   end
 
@@ -48,7 +48,7 @@ class CampsController < ApplicationController
   end
 
   def camp_params
-    params.require(:camp).permit(:name, :location)
+    params.require(:camp).permit(:name, :location, :username, :password, :cost, :dates, :description, :photo_url)
   end
 
 end
