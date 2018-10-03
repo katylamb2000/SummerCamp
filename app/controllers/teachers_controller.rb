@@ -2,9 +2,9 @@ class TeachersController < ApplicationController
   before_action :set_teacher, only: [:show, :edit, :update, :destroy]
   before_action :set_camps, only: [:new, :edit]
 
-  before_action :set_skills, only: [:new, :edit]
+  before_action :set_skills, only: [:new, :edit, :search]
   def index
-    @teachers = Teacher.all
+  @teachers = Teacher.all
   end
 
   def show
@@ -29,6 +29,14 @@ class TeachersController < ApplicationController
   def edit
   end
 
+  def search
+    if params[:search].blank?
+      @teachers = Teacher.all
+    else
+      @teachers = Teacher.search(params)
+    end
+  end
+
   def update
     @teacher.update(teacher_params)
     if @teacher.valid?
@@ -51,7 +59,7 @@ class TeachersController < ApplicationController
   end
 
   def teacher_params
-    params.require(:teacher).permit(:name, :username, :password, :skill_id)
+    params.require(:teacher).permit(:name, :skill_id, :search)
   end
 
   def set_camps

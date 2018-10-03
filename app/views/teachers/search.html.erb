@@ -1,19 +1,17 @@
-<h1> All Teachers</h1>
+<h1>Teachers</h1>
 
 <%= form_tag search_teachers_path, method: :get do %>
 
 <%= text_field_tag :search, nil, placeholder: "Search" %>
-<%= submit_tag "search" %>
+<%= submit_tag "search"  %>
 
 <% end %>
 
 <ul>
+  <% if @teachers %>
   <% @teachers.each do |teacher| %>
   <li> <%= link_to teacher.name, teacher %>
   </li>
   <% end %>
+  <% end %>
 </ul>
-
-
-
-<%= link_to "Register as a New Teacher", new_teacher_path %>
