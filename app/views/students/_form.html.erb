@@ -3,6 +3,14 @@
     <%= f.label :name, "Name:" %>
     <%= f.text_field :name %>
   </div><br>
+  <div class="field">
+    <%= f.label :bio, "Bio:" %>
+    <%= f.text_area :bio %>
+  </div><br>
+  <div class="field">
+    <%= f.label :photo, "Photo:" %>
+    <%= f.file_field :picture %>
+  </div><br>
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -59,7 +59,7 @@ class TeachersController < ApplicationController
   end
 
   def teacher_params
-    params.require(:teacher).permit(:name, :skill_id, :search)
+    params.require(:teacher).permit(:name, :skill_id, :nationality)
   end
 
   def set_camps

@@ -1,7 +1,7 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
   before_action :set_camps, only: [:new, :edit]
-  before_action :set_activities, only: [:new, :edit]
+  # before_action :set_activities, only: [:new, :edit]
 
   def index
     @students = Student.all

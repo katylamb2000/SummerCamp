@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_03_123022) do
+ActiveRecord::Schema.define(version: 2018_10_03_144431) do
 
   create_table "activities", force: :cascade do |t|
     t.integer "teacher_id"
@@ -68,6 +68,8 @@ ActiveRecord::Schema.define(version: 2018_10_03_123022) do
     t.integer "camp_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "bio"
+    t.string "photo"
   end
 
   create_table "teacher_skills", force: :cascade do |t|
@@ -81,6 +83,9 @@ ActiveRecord::Schema.define(version: 2018_10_03_123022) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "nationality"
+    t.string "bio"
+    t.string "photo"
   end
 
   create_table "users", force: :cascade do |t|
