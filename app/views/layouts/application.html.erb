@@ -10,37 +10,46 @@
   </head>
 
   <body>
-    <div class="wrapper clearfix">
-      <div class="col-1">
-        <img src="/logo.png">
+    <div class="container">
+      <div class="row">
+        <div class="col logo p-3">
+          <a href="/camps"><img src="/logo.png"></a>
+        </div>
+        <div class="col p-3">
+        </div>
       </div>
     </div>
 
-    <div class="wrapper clearfix nav-bar">
-        <div class="col-2 hidden">.</div>
-        <div class="col-1">
+    <div class="container">
+      <div class="row bg-1 px-3">
+        <div class="col p-2 mt-2"></div>
+        <div class="col p-2 mt-2"></div>
+        <div class="col text-right p-2 mt-2">
+
           <% if logged_in? %>
           <p> <%= link_to current_user.username, current_user %> | <%= link_to "Log out", logout_path, method: "post" %> </p>
 
         <% else %>
-          <p> <%= link_to "Log in", login_path %> /
-          <%= link_to "Register", signup_path %> </p>
+          <p> <%= link_to "Log in", login_path %> / <%= link_to "Register", signup_path %> </p>
         <% end %>
-</div>
-    </div>
-
-    <div class="wrapper clearfix">
-      <div class="col-3">
-        <%= yield %>
+        </div>
       </div>
     </div>
 
-    <div class="wrapper clearfix footer">
+    <div class="container bg-2">
+      <div class="row px-3">
+        <div class="col p-3 ">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
 
-        <div class="col-1"></div>
-        <div class="col-1"></div>
-        <div class="col-1"></div>
-
+    <div class="container footer">
+      <div class="row bg-1 text-center">
+        <div class="col p-3 border-right"><b><a href="/teachers">Teacher Portal</a></b></div>
+        <div class="col p-3 border-right"><b><a href="/camps">Camp Portal</a></b></div>
+        <div class="col p-3"><b><a href="/students">Student Portal</a></b></div>
+      </div>
     </div>
   </body>
 </html>
