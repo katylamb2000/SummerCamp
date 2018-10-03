@@ -4,6 +4,7 @@ class Teacher < ApplicationRecord
   has_many :activities
   has_many :skills, through: :teacher_skills
   has_one :camp_teacher
+  has_one :camp, through: :camp_teacher
 
   def self.search(params)
     if !params[:name].blank? && !params[:skill].blank?
@@ -15,6 +16,11 @@ class Teacher < ApplicationRecord
     else
     @teacher = []
   end
+end
+
+def hire_teacher
+  @teacher.camp << self
+  redirect_to @camp
 end
 
 end

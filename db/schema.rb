@@ -48,6 +48,13 @@ ActiveRecord::Schema.define(version: 2018_10_03_144431) do
     t.string "photo_url"
   end
 
+  create_table "searches", force: :cascade do |t|
+    t.string "keywords"
+    t.integer "skill_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "skills", force: :cascade do |t|
     t.string "name"
     t.string "category"

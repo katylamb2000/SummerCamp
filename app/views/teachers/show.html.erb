@@ -3,9 +3,19 @@
 <p> <%= @teacher.name %> is <%= @teacher.nationality %>
 
 <% if @teacher.camp_teacher %>
-<p> <%= @teacher.name %> has been hired to work on the <%= link_to @teacher.camp.name, camps_path(@teacher.camp) %> camp </p>
+<p> <%= @teacher.name %> has been hired to work on the <%= link_to @teacher.camp.name, camp_path(@teacher.camp.name) %> camp </p>
 <% else %>
 
 <p> <%= @teacher.name %> has not yet been hired for a camp.</p>
-<%= link_to "Hire #{@teacher.name}", edit_teacher_path %>
+<%= link_to "Edit #{@teacher.name}'s profile", edit_teacher_path %>
+<% end %>
+
+
+
+<%= form_for @campteacher do |f| %>
+
+<% f.number_field :teacher_id, :value => @teacher.id %>
+<% f.number_field :camp_id, :value => current_user.id %>
+
+<%= f.submit "Hire teacher" %>
 <% end %>

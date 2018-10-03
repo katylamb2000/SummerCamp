@@ -6,6 +6,30 @@
 <p><%= @camp.description %> </p>
 
 
+<div>
+<ul>
+<p> These kids have signed up for this camp </p>
 <%  @camp.students.each do |student| %>
-<p> These kids have signed up for this camp <%= link_to student.name, student %>  </p>
+<li> <%= link_to student.name, student %>  </li>
 <% end %>
+</ul>
+</div>
+<div>
+<ul>
+<p> These teachers are working on this camp</p>
+<%  @camp.teachers.each do |teacher| %>
+
+<li> <%= link_to teacher.name, teacher %> </li>
+<% end %>
+</ul>
+</div>
+
+<div>
+<ul>
+<p> These activities are available on this camp</p>
+<%  @camp.skills.each do |skill| %>
+
+<li> <%= link_to skill.name, skill %> </li>
+<% end %>
+</ul>
+</div>

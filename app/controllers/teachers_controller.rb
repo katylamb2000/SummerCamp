@@ -8,6 +8,7 @@ class TeachersController < ApplicationController
   end
 
   def show
+    @campteacher = CampTeacher.create
   end
 
   def new
@@ -69,4 +70,9 @@ class TeachersController < ApplicationController
   def set_skills
     @skills = Skill.all.sort_by { |s| s.name }
   end
+
+  def hire_teacher!(id)
+    @camp.teacher << teacher.find_by_id(id)
+  end
+
 end
