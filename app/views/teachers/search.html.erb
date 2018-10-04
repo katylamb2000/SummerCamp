@@ -1,20 +1,33 @@
-<h1>Teachers</h1>
+<h1>Search Results For <%= Skill.find(params[:skill]).name.capitalize %></h1>
 
-<%= form_tag search_teachers_path, method: :get do %>
+<%#= form_tag search_teachers_path, method: :get do %>
+  <%#= text_field_tag :search, nil, placeholder: "Search" %>
+    <%#= submit_tag "search"  %>
+<%# end %>
+
+<div class="container pt-3">
+  <div class="row">
+      <button type="button" class="btn btn-warning btn-lg">
+        <%= link_to "< Back", teachers_path %>
+      </button>
+  </div>
+</div>
 
 
-<%= text_field_tag :search, nil, placeholder: "Search" %>
-<%= submit_tag "search"  %>
-
-<% end %>
-
-
-
-<ul>
-  <% if @teachers %>
-  <% @teachers.each do |teacher| %>
-  <li> <%= link_to teacher.name, teacher %>
-  </li>
-  <% end %>
-  <% end %>
-</ul>
+<div class="container pt-3">
+  <div class="row">
+    <div class="list-group col">
+      <% if @teachers.length > 0 %>
+        <% @teachers.each do |teacher| %>
+          <button type="button" class="list-group-item list-group-item-action">
+            <%= link_to teacher.name, teacher %>
+          </button>
+        <% end %>
+        <% else %>
+        <p><i>No results to show.</i></p>
+      <% end %>
+</div>
+    <div class="col"></div>
+    <div class="col"></div>
+  </div>
+</div>

@@ -1,15 +1,15 @@
-<h1>Log in</h1>
+<h1 class="mb-4">Log in</h1>
 
 <% if flash[:errors] %>
   <% flash[:errors].each do |e| %>
-    <p> <%= e %> </p>
+    <p><i> <%= e %> </i></p>
   <% end %>
 <% end %>
 
 <%= form_tag sessions_path do %>
-  <%= label_tag :username %>
-  <%= text_field_tag :username %>
-  <%= label_tag :password %>
-  <%= password_field_tag :password %>
-  <%= submit_tag %>
+  <%= label_tag :username, "Username:", class: 'mr-3 mb-4' %>
+  <%= text_field_tag :username %><br>
+  <%= label_tag :password, "Password:", class: 'mr-3'  %>
+  <%= password_field_tag :password %><br>
+  <%= submit_tag "Log in", class: 'btn btn-warning mt-3' %>
 <% end %>
