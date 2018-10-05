@@ -1,37 +1,40 @@
+<div class="col">
 <%= form_for(@camp) do |f| %>
-  <div class="field">
-  <%= f.label :username %>
-  <%= f.text_field :username %>
+  <div class="field row">
+  <%= f.label :username, "Username: " %>
+  <%= f.text_field :username, class: "ml-3" %>
   </div><br>
-  <div class="field">
-  <%= f.label :password %>
-  <%= f.password_field :password %>
+  <div class="field row">
+  <%= f.label :password, "Password: " %>
+  <%= f.password_field :password, class: "ml-3" %>
   </div><br>
-  <div class="field">
-    <%= f.label :name, "Name of Camp:" %>
-    <%= f.text_field :name %>
+  <div class="field row">
+    <%= f.label :name, "Name of Camp: " %>
+    <%= f.text_field :name, class: "ml-3" %>
   </div><br>
-  <div class="field">
-    <%= f.label :location, "Location:" %>
-    <%= f.text_field :location %>
+  <div class="field row">
+    <%= f.label :location, "Location: " %>
+    <%= f.text_field :location, class: "ml-3" %>
   </div><br>
-  <div class="field">
-    <%= f.label :cost, "Cost:" %>
-    <%= f.number_field :cost %>
+  <div class="field row">
+    <%= f.label :cost, "Cost: " %>
+    <%= f.number_field :cost, class: "ml-3" %>
   </div><br>
-  <div class="field">
-    <%= f.label :dates, "Dates:" %>
-    <%= f.text_field :dates %>
+  <div class="field row">
+    <%= f.label :dates, "Dates: " %>
+    <%= f.text_field :dates, class: "ml-3" %>
   </div><br>
-  <div class="field">
-    <%= f.label :description, "Description:" %>
-    <%= f.text_area :description %>
+  <div class="field row">
+    <%= f.label :description, "Description: " %>
+    <%= f.text_area :description, class: "ml-3" %>
   </div><br>
-  <div class="field">
-    <%= f.label :photo_url, "Photo:" %>
-    <%= f.file_field :photo_url %>
+  <div class="field row">
+    <%= f.label :photo_url, "Photo URL: " %>
+    <%= f.text_field :photo_url, class: "ml-3" %>
   </div><br>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Create Camp", class: 'btn btn-warning btn-lg' %>
   </div>
 <% end %>
+</div>
+</div class="col"></div>

@@ -1,21 +1,40 @@
-<h1> <%= @teacher.name %>  </h1>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>
+        <%= @teacher.name %>
+      </h1>
+      <img src="<%= @teacher.photo %>">
+      <p>
+        Nationality: <%= @teacher.nationality %>
+      </p>
+      <p>
+        Bio: <%= @teacher.bio %>
+      </p>
 
-<p> <%= @teacher.name %> is <%= @teacher.nationality %>
-
-<% if @teacher.camp_teacher %>
-<p> <%= @teacher.name %> has been hired to work on the <%= link_to @teacher.camp.name, camp_path(@teacher.camp.name) %> camp </p>
-<% else %>
-
-<p> <%= @teacher.name %> has not yet been hired for a camp.</p>
-<%= link_to "Edit #{@teacher.name}'s profile", edit_teacher_path %>
-<% end %>
-
-
-
-<%= form_for @campteacher do |f| %>
-
+    </div>
+    <div class="col"></div>
+    <div class="col">
+      <% if @teacher.camp_teacher %>
+        <p>
+          <%= @teacher.name %> has been hired to work on the <%= link_to @teacher.camp.name, camp_path(@teacher.camp.name) %> camp
+        </p>
+      <% else %>
+        <p>
+          <%= @teacher.name %> has not yet been hired for a camp.
+        </p>
+        <p>
+          <%= form_for @campteacher do |f| %>
 <%= f.hidden_field :teacher_id, :value => @teacher.id %>
 <%= f.hidden_field :camp_id, :value => current_user.id %>
-
-<%= f.submit "Hire teacher" %>
+<%= f.submit "Hire teacher", class: 'btn btn-warning btn-lg' %>
 <% end %>
+ 
+        </p>
+        <%#= link_to "Edit #{@teacher.name}'s profile", edit_teacher_path %>
+      <% end %>
+
+    </div>
+  </div>
+</div>
+

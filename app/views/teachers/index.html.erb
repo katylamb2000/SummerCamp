@@ -1,15 +1,16 @@
-<h1> Search For Teachers</h1>
+<div class="container">
+<div class="row"><h1 class="mb-4"> Search For Teachers</h1></div>
+<div class="row">
+  <%= form_tag search_teachers_path, method: :get do %>
+    <%= text_field_tag :search, nil, placeholder: "Search Nationality" %> or filter by skill:
+    <%= select_tag "skill", options_from_collection_for_select(Skill.all, "id", "name"), placeholder: "skill name Search" %>
+  <%= submit_tag "search", class: 'btn btn-warning' %>
 
-<%= form_tag search_teachers_path, method: :get do %>
-
-<%= text_field_tag :search, nil, placeholder: "Search Nationality" %>
-<%= select_tag "skill", options_from_collection_for_select(Skill.all, "id", "name"), placeholder: "skill name Search" %>
-<%= submit_tag "search" %>
-
-<% end %>
-
-
-
-
-
-<%= link_to "Register A New Teacher", new_teacher_path %>
+  <% end %>
+</div>
+<div class="row text-left mt-4 mb-4">
+  <button type="button" class="btn btn-warning btn-lg">
+    <%= link_to "Register A New Teacher", new_teacher_path %>
+  </button>
+</div>
+</div>

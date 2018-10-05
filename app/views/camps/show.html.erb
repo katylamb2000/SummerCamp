@@ -1,35 +1,56 @@
-<h1> <%= @camp.name %>  </h1>
+<div class="container">
+  <div class="row pb-2">
+    <div class="col">
+      <h1><%= @camp.name %> Camp</h1>
+      <h2><%= @camp.location %></h2>
+      <p><%= @camp.cost %></p>
+      <p><%= @camp.dates %></p>
+    </div>
+    <div class="col">
+      <p><img src="<%= @camp.photo_url %>">
+      <p><%= @camp.description %> </p>
+    </div>
+  </div>
+  <div class="row pt-4 border-top">
+      <div class="col">
+        <ul>
+          <p>Students Attending:</p>
+          <% if @camp.students.length > 0  %>
+            <%  @camp.students.each do |student| %>
+          <li> <%= link_to student.name, student %>  </li>
+            <% end %>
+            <% else  %>
+            <p><i>No students confirmed yet.</i></p>
+            <% end %>
+        </ul>
+      </div>
 
-<h2><%= @camp.location %></h2>
-<p><%= @camp.cost %></p>
-<p><%= @camp.dates %></p>
-<p><%= @camp.description %> </p>
+        <div class="col">
+          <ul>
+            <p>Teachers:</p>
+              <% if @camp.teachers.length > 0  %>
+                <%  @camp.teachers.each do |teacher| %>
+                  <li>
+                    <%= link_to teacher.name, teacher %>
+                  </li>
+              <% end %>
+            <% else  %>
+            <p><i>
+              No teachers confirmed yet.
+            </i></p>
+            <% end %>
+          </ul>
+        </div>
 
-
-<div>
-<ul>
-<p> These kids have signed up for this camp </p>
-<%  @camp.students.each do |student| %>
-<li> <%= link_to student.name, student %>  </li>
-<% end %>
-</ul>
-</div>
-<div>
-<ul>
-<p> These teachers are working on this camp</p>
-<%  @camp.teachers.each do |teacher| %>
-
-<li> <%= link_to teacher.name, teacher %> </li>
-<% end %>
-</ul>
-</div>
-
-<div>
-<ul>
-<p> These activities are available on this camp</p>
-<%  @camp.skills.each do |skill| %>
-
-<li> <%= link_to skill.name, skill %> </li>
-<% end %>
-</ul>
-</div>
+      <div class="col">
+        <ul>
+          <p> Available Activities:</p>
+            <%  @camp.skills.each do |skill| %>
+              <li>
+                <%= link_to skill.name, skill %>
+              </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
